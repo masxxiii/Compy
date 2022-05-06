@@ -48,6 +48,7 @@ class GameScene: SKScene {
             
             switch UIDevice.current.orientation {
             case .landscapeLeft:
+
                 forceAmount = 13000
             
             case .landscapeRight:
