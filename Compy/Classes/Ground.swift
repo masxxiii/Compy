@@ -30,6 +30,15 @@ class Ground: SKSpriteNode, GameSprite {
             self.addChild(tileNode)
             tileCount += 1
         }
+        
+        solidifyGround()
+    }
+    
+    // function for adding physics to our ground.
+    func solidifyGround() {
+        let pointTopLeft = CGPoint(x: 0, y: 0)
+        let pointTopRight = CGPoint(x: size.width, y: 0) 
+        self.physicsBody = SKPhysicsBody(edgeFrom: pointTopLeft, to: pointTopRight)
     }
     
     // function for adding tap functionality.

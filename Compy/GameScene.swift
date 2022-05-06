@@ -12,6 +12,8 @@ class GameScene: SKScene {
     let cam = SKCameraNode()
     let ground = Ground()
     let compy = Compy()
+    let alien1 = Alien(position: CGPoint(x: 200, y: 250))
+    let alien2 = Alien(position: CGPoint(x: 50, y: 250))
     
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red: 1.00, green: 0.89, blue: 0.77, alpha: 1.00)
@@ -27,6 +29,8 @@ class GameScene: SKScene {
         ground.tileGround()
         self.addChild(ground)
         self.addChild(compy)
+        self.addChild(alien1)
+        self.addChild(alien2)
     }
     
     override func didSimulatePhysics() {
