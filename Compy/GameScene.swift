@@ -44,5 +44,32 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         compy.update()
+        
+        if let accelData = self.motionManager.accelerometerData {
+            var forceAmount: CGFloat
+            var movement = CGVector()
+            
+            switch UIDevice.current.orientation {
+            case .landscapeLeft:
+                forceAmount = 13000
+            
+            case .landscapeRight:
+                forceAmount = -13000
+            
+            default:
+                forceAmount = 0
+                
+            }
+            
+            if (accelData.acceleration.y > 0.15) {
+                movement.dx = -forceAmount
+                
+            } else if (accelData.acceleration.y < -0.15) {
+                
+                movement.dx = forceAmount
+            }
+            
+            compy.physicsBody?.applyForce(movement)
+        }
     }
 }
