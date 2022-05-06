@@ -17,6 +17,7 @@
 		A54D7F80282548730050DF30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D7F7E282548730050DF30 /* LaunchScreen.storyboard */; };
 		A54D7F87282562060050DF30 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F86282562060050DF30 /* Alien.swift */; };
 		A54D7F8A282562920050DF30 /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F89282562920050DF30 /* GameSprite.swift */; };
+		A54D7F8D282571750050DF30 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F8C282571750050DF30 /* Ground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A54D7F7F282548730050DF30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A54D7F86282562060050DF30 /* Alien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alien.swift; sourceTree = "<group>"; };
 		A54D7F89282562920050DF30 /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
+		A54D7F8C282571750050DF30 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A54D7F86282562060050DF30 /* Alien.swift */,
+				A54D7F8C282571750050DF30 /* Ground.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54D7F8D282571750050DF30 /* Ground.swift in Sources */,
 				A54D7F76282548710050DF30 /* GameScene.swift in Sources */,
 				A54D7F78282548710050DF30 /* GameViewController.swift in Sources */,
 				A54D7F70282548710050DF30 /* AppDelegate.swift in Sources */,
