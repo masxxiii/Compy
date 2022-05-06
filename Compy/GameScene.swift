@@ -22,6 +22,8 @@ class GameScene: SKScene {
     
         compy.position = CGPoint(x: 150, y: 250)
         
+        
+        
                 
         //positioning ground
         ground.position = CGPoint(x: -self.size.width*2, y: 100)
@@ -35,5 +37,9 @@ class GameScene: SKScene {
     
     override func didSimulatePhysics() {
         self.camera!.position = compy.position
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        compy.update()
     }
 }
