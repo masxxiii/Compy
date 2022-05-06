@@ -12,10 +12,13 @@ class GameScene: SKScene {
     
     let cam = SKCameraNode()
     let motionManager = CMMotionManager()
+    
     let ground = Ground()
     let compy = Compy()
     let alien1 = Alien(position: CGPoint(x: 300, y: 250))
     let alien2 = Alien(position: CGPoint(x: 50, y: 250))
+    
+    var screenCenter = CGFloat()
     
     //function to implement any custom behavior for your scene
     override func didMove(to view: SKView) {
@@ -24,12 +27,13 @@ class GameScene: SKScene {
         self.camera = cam
         self.motionManager.startAccelerometerUpdates()
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
+        screenCenter = self.size.height / 2
     
         compy.position = CGPoint(x: 150, y: 250)
                 
         //positioning ground
-        ground.position = CGPoint(x: -self.size.width*2, y: 30)
-        ground.size = CGSize(width: self.size.width*6, height: 0)
+        ground.position = CGPoint(x: -self.size.width * 2, y: 30)
+        ground.size = CGSize(width: self.size.width * 6, height: 0)
         ground.tileGround()
         self.addChild(ground)
         self.addChild(compy)
@@ -37,9 +41,22 @@ class GameScene: SKScene {
         self.addChild(alien2)
     }
     
-    // function that is called by the system exactly once per frame
+    // method that is called by the system exactly once per frame
     override func didSimulatePhysics() {
-        self.camera!.position = compy.position
+            
+        var cameraYPos = screenCenter
+        cam.yScale = 1
+        cam.xScale = 1
+        
+        if (compy.position.y > screenCenter) {
+            cameraYPos = compy.position.y
+            let percentageOfMaxHeight = (compy.position.y - screenCenter) / (compy.maxHeight - screenCenter)
+            let newScale = 1 + percentageOfMaxHeight
+            cam.xScale = newScale
+            cam.yScale = newScale
+        }
+        
+        self.camera!.position = CGPoint(x: compy.position.x, y: cameraYPos)
     }
     
     //UIKit calls this function when a new touch is detected in a view or window
