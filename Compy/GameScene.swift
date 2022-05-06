@@ -32,7 +32,7 @@ class GameScene: SKScene {
         compy.position = CGPoint(x: 150, y: 250)
                 
         //positioning ground
-        ground.position = CGPoint(x: -self.size.width * 2, y: 30)
+        ground.position = CGPoint(x: -self.size.width * 2, y: 80)
         ground.size = CGSize(width: self.size.width * 6, height: 0)
         ground.tileGround()
         self.addChild(ground)
