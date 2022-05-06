@@ -40,11 +40,11 @@ class Ground: SKSpriteNode, GameSprite {
     }
     
     // function for checking reposition.
-    func checkForReposition(playerProgress: CGFloat)
+    func checkForReposition(compyProgress: CGFloat)
     {
         let groundJumpPosition = jumpWidth * jumpCount
         
-        if (playerProgress >= groundJumpPosition)
+        if (compyProgress >= groundJumpPosition)
         {
             self.position.x += jumpWidth
             jumpCount += 1
