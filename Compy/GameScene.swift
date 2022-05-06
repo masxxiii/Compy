@@ -22,6 +22,8 @@ class GameScene: SKScene {
     
     let alien2 = Alien(position: CGPoint(x: 50, y: 250))
     
+    let battery = Battery()
+    
     var screenCenter = CGFloat()
     
     var initialCompyPosition = CGPoint(x: 50, y: 200)
@@ -43,6 +45,7 @@ class GameScene: SKScene {
         ground.position = CGPoint(x: -self.size.width * 2, y: 80)
         ground.size = CGSize(width: self.size.width * 6, height: 0)
         ground.tileGround()
+        
         self.addChild(ground)
         self.addChild(compy)
         self.addChild(alien1)

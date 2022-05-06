@@ -10,7 +10,7 @@ import SpriteKit
 class Battery: SKSpriteNode, GameSprite {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named:"Environment")
     
-    var initialSize: CGSize = CGSize(width: 40, height: 40)
+    var initialSize: CGSize = CGSize(width: 40, height: 50)
     
     var pulseAnimation = SKAction()
     
