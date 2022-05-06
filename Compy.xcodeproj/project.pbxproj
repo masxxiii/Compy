@@ -19,6 +19,7 @@
 		A54D7F8A282562920050DF30 /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F89282562920050DF30 /* GameSprite.swift */; };
 		A54D7F8D282571750050DF30 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F8C282571750050DF30 /* Ground.swift */; };
 		A54D7F8F28257A730050DF30 /* Compy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F8E28257A730050DF30 /* Compy.swift */; };
+		A54D7F9128259D330050DF30 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F9028259D330050DF30 /* Battery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A54D7F89282562920050DF30 /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
 		A54D7F8C282571750050DF30 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		A54D7F8E28257A730050DF30 /* Compy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compy.swift; sourceTree = "<group>"; };
+		A54D7F9028259D330050DF30 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				A54D7F86282562060050DF30 /* Alien.swift */,
 				A54D7F8C282571750050DF30 /* Ground.swift */,
 				A54D7F8E28257A730050DF30 /* Compy.swift */,
+				A54D7F9028259D330050DF30 /* Battery.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				A54D7F8D282571750050DF30 /* Ground.swift in Sources */,
 				A54D7F76282548710050DF30 /* GameScene.swift in Sources */,
 				A54D7F78282548710050DF30 /* GameViewController.swift in Sources */,
+				A54D7F9128259D330050DF30 /* Battery.swift in Sources */,
 				A54D7F8F28257A730050DF30 /* Compy.swift in Sources */,
 				A54D7F70282548710050DF30 /* AppDelegate.swift in Sources */,
 				A54D7F8A282562920050DF30 /* GameSprite.swift in Sources */,
