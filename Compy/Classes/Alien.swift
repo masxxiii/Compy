@@ -29,7 +29,7 @@ class Alien: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("alien_reaction2")
         ]
         
-        let animatedAction = SKAction.animate(with: animatedFrames, timePerFrame: 0.14)
+        let animatedAction = SKAction.animate(with: animatedFrames, timePerFrame: 0.20)
         animation = SKAction.repeatForever(animatedAction)
     }
     
