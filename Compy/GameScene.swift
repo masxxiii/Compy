@@ -17,6 +17,7 @@ class GameScene: SKScene {
     let alien1 = Alien(position: CGPoint(x: 300, y: 250))
     let alien2 = Alien(position: CGPoint(x: 50, y: 250))
     
+    //function to implement any custom behavior for your scene
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red: 1.00, green: 0.89, blue: 0.77, alpha: 1.00)
         self.anchorPoint = .zero
@@ -35,10 +36,13 @@ class GameScene: SKScene {
         self.addChild(alien2)
     }
     
+    // function that is called by the system exactly once per frame
     override func didSimulatePhysics() {
         self.camera!.position = compy.position
     }
     
+    
+    //Tells your app to perform any app-specific logic to update your scene
     override func update(_ currentTime: TimeInterval) {
         compy.update()
         
