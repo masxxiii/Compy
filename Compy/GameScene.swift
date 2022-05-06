@@ -14,7 +14,7 @@ class GameScene: SKScene {
     let motionManager = CMMotionManager()
     let ground = Ground()
     let compy = Compy()
-    let alien1 = Alien(position: CGPoint(x: 200, y: 250))
+    let alien1 = Alien(position: CGPoint(x: 300, y: 250))
     let alien2 = Alien(position: CGPoint(x: 50, y: 250))
     
     override func didMove(to view: SKView) {
@@ -29,7 +29,7 @@ class GameScene: SKScene {
         
                 
         //positioning ground
-        ground.position = CGPoint(x: -self.size.width*2, y: 100)
+        ground.position = CGPoint(x: -self.size.width*2, y: 30)
         ground.size = CGSize(width: self.size.width*6, height: 0)
         ground.tileGround()
         self.addChild(ground)
