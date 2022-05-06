@@ -24,9 +24,6 @@ class GameScene: SKScene {
         self.motionManager.startAccelerometerUpdates()
     
         compy.position = CGPoint(x: 150, y: 250)
-        
-        
-        
                 
         //positioning ground
         ground.position = CGPoint(x: -self.size.width*2, y: 30)

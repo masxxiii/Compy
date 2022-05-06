@@ -72,7 +72,7 @@ class Compy: SKSpriteNode, GameSprite {
         let bodyTexture = textureAtlas.textureNamed("stand")
         self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
         self.physicsBody?.linearDamping = 0.9
-        self.physicsBody?.mass = 30
+        self.physicsBody?.mass = 3
         self.physicsBody?.allowsRotation = false
     }
     
