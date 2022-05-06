@@ -20,6 +20,12 @@ class Compy: SKSpriteNode, GameSprite {
     
     var moveAnimation = SKAction()
     
+    var jumping = false
+    
+    let maxHeight: CGFloat = 100
+    
+    let maxJumpingForce: CGFloat = 60000
+    
     // initialization instance.
     init() {
         super.init(texture: nil, color: .clear, size: initialSize)
@@ -76,8 +82,32 @@ class Compy: SKSpriteNode, GameSprite {
         self.physicsBody?.allowsRotation = false
     }
     
+    // function for making our sprite jump.
+    func jump() {
+        self.removeAction(forKey: "standAnimation")
+        self.run(jumpAnimation, withKey: "jumpAnimation")
+        self.jumping = true
+    }
+    
     // function for updating our sprite.
-    func update() {}
+    func update() {
+        if (self.jumping) {
+            var forceToApply = maxJumpingForce
+            
+            if (position.y > 100) {
+                let percentageOfMaxHeight = (position.y / maxHeight)
+                let JumpingForceSubtraction = percentageOfMaxHeight * maxJumpingForce
+                
+                forceToApply -= JumpingForceSubtraction
+            }
+            
+            self.physicsBody?.applyForce(CGVector(dx: 0, dy: forceToApply))
+            
+            if (self.physicsBody!.velocity.dy > 400) {
+                self.physicsBody!.velocity.dy = 300
+            }
+        }
+    }
     
     
     // function for adding tap functionality.
