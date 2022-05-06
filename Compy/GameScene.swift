@@ -24,7 +24,7 @@ class GameScene: SKScene {
     
     var screenCenter = CGFloat()
     
-    var initialCompyPosition = CGPoint(x: 50, y: 50)
+    var initialCompyPosition = CGPoint(x: 50, y: 200)
     
     var compyProgress = CGFloat()
     
