@@ -23,6 +23,7 @@ class GameScene: SKScene {
         self.anchorPoint = .zero
         self.camera = cam
         self.motionManager.startAccelerometerUpdates()
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
     
         compy.position = CGPoint(x: 150, y: 250)
                 
@@ -53,6 +54,7 @@ class GameScene: SKScene {
             if let gameSprite = nodeTouched as? GameSprite
             {
                 gameSprite.onTap()
+                compy.jump()
             }
         }
         
