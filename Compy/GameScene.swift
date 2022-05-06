@@ -54,10 +54,20 @@ class GameScene: SKScene {
             if let gameSprite = nodeTouched as? GameSprite
             {
                 gameSprite.onTap()
-                compy.jump()
+                compy.startJumping()
             }
         }
         
+    }
+    
+    //UIKit calls this method when a finger or Apple Pencil is no longer touching the screen
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        compy.stopJumping()
+    }
+    
+    //UIKit calls this method when it receives a system interruption requiring cancellation of the touch sequence
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        compy.stopJumping()
     }
     
     
