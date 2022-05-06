@@ -11,14 +11,22 @@ import CoreMotion
 class GameScene: SKScene {
     
     let cam = SKCameraNode()
+    
     let motionManager = CMMotionManager()
     
     let ground = Ground()
+    
     let compy = Compy()
+    
     let alien1 = Alien(position: CGPoint(x: 300, y: 250))
+    
     let alien2 = Alien(position: CGPoint(x: 50, y: 250))
     
     var screenCenter = CGFloat()
+    
+    var initialCompyPosition = CGPoint(x: 50, y: 50)
+    
+    var compyProgress = CGFloat()
     
     //function to implement any custom behavior for your scene
     override func didMove(to view: SKView) {
@@ -29,7 +37,7 @@ class GameScene: SKScene {
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
         screenCenter = self.size.height / 2
     
-        compy.position = CGPoint(x: 150, y: 250)
+        compy.position = initialCompyPosition
                 
         //positioning ground
         ground.position = CGPoint(x: -self.size.width * 2, y: 80)
@@ -57,6 +65,8 @@ class GameScene: SKScene {
         }
         
         self.camera!.position = CGPoint(x: compy.position.x, y: cameraYPos)
+        compyProgress = compy.position.x - initialCompyPosition.x
+        ground.checkForReposition(compyProgress: compyProgress)
     }
     
     //UIKit calls this function when a new touch is detected in a view or window
