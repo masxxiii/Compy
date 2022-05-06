@@ -30,6 +30,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.run(standAnimation, withKey: "standAnimation")
     }
     
+    // function for adding jump animation.
     func addJumpAnimations()
     {
         let jumpFrames: [SKTexture] = [textureAtlas.textureNamed("jump")]
@@ -37,18 +38,21 @@ class Compy: SKSpriteNode, GameSprite {
         jumpAnimation = SKAction.repeatForever(jumpAction)
     }
     
+    // function for adding stand animation.
     func addStandAnimations() {
         let standFrames: [SKTexture] = [textureAtlas.textureNamed("stand")]
         let standAction = SKAction.animate(with: standFrames, timePerFrame: 0.03)
         standAnimation = SKAction.repeatForever(standAction)
     }
     
+    // function for adding dead animation.
     func addDeadAnimations() {
         let deadFrames: [SKTexture] = [textureAtlas.textureNamed("dead")]
         let deadAction = SKAction.animate(with: deadFrames, timePerFrame: 0.03)
         deadAnimation = SKAction.repeatForever(deadAction)
     }
     
+    // function for adding move animation.
     func addMoveAnimations() {
         let moveFrames: [SKTexture] = [
             textureAtlas.textureNamed("move1"),

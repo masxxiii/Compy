@@ -14,10 +14,13 @@ class GameScene: SKScene {
     
     let cam = SKCameraNode()
     let ground = Ground()
+    let player = Compy()
     
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red: 1.00, green: 0.89, blue: 0.77, alpha: 1.00)
         self.anchorPoint = .zero
+    
+        player.position = CGPoint(x: 150, y: 250)
         
                 
         //positioning ground
@@ -25,5 +28,6 @@ class GameScene: SKScene {
         ground.size = CGSize(width: self.size.width*6, height: 0)
         ground.tileGround()
         self.addChild(ground)
+        self.addChild(player)
     }
 }
