@@ -33,6 +33,11 @@ class Alien: SKSpriteNode, GameSprite {
         animation = SKAction.repeatForever(animatedAction)
     }
     
+    // function for adding physics to our sprite.
+    func addPhysics() {
+        self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+    }
+    
     // function for adding tap functionality.
     func onTap() {}
     
