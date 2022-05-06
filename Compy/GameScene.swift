@@ -41,6 +41,23 @@ class GameScene: SKScene {
         self.camera!.position = compy.position
     }
     
+    //UIKit calls this function when a new touch is detected in a view or window
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch in (touches)
+        {
+            let location = touch.location(in: self)
+            
+            let nodeTouched = atPoint(location)
+            
+            if let gameSprite = nodeTouched as? GameSprite
+            {
+                gameSprite.onTap()
+            }
+        }
+        
+    }
+    
     
     //Tells your app to perform any app-specific logic to update your scene
     override func update(_ currentTime: TimeInterval) {
