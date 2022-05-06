@@ -12,6 +12,10 @@ class Ground: SKSpriteNode, GameSprite {
     
     var initialSize: CGSize = CGSize.zero
     
+    var jumpWidth = CGFloat()
+    
+    var jumpCount = CGFloat(1)
+    
     // function for tiling ground texture across the width of tile node.
     func tileGround()
     {
@@ -31,7 +35,20 @@ class Ground: SKSpriteNode, GameSprite {
             tileCount += 1
         }
         
+        jumpWidth = tileSize.width * floor(tileCount / 3)
         solidifyGround()
+    }
+    
+    // function for checking reposition.
+    func checkForReposition(playerProgress: CGFloat)
+    {
+        let groundJumpPosition = jumpWidth * jumpCount
+        
+        if (playerProgress >= groundJumpPosition)
+        {
+            self.position.x += jumpWidth
+            jumpCount += 1
+        }
     }
     
     // function for adding physics to our ground.
