@@ -82,11 +82,29 @@ class Compy: SKSpriteNode, GameSprite {
         self.physicsBody?.allowsRotation = false
     }
     
-    // function for making our sprite jump.
-    func jump() {
+    // function for making our sprite start jumping.
+    func startJumping() {
         self.removeAction(forKey: "standAnimation")
         self.run(jumpAnimation, withKey: "jumpAnimation")
         self.jumping = true
+    }
+    
+    // function for making our sprite stop jumping.
+    func stopJumping()
+    {
+        if((self.physicsBody?.velocity.dx)! == 0.0)
+        {
+            self.removeAction(forKey: "jumpAnimation")
+            self.removeAction(forKey: "moveAnimation")
+            self.run(standAnimation, withKey: "standAnimation")
+            self.jumping = false
+        }
+        else
+        {
+            self.removeAction(forKey: "jumpAnimation")
+            self.run(moveAnimation, withKey: "moveAnimation")
+            self.jumping = false
+        }
     }
     
     // function for updating our sprite.
