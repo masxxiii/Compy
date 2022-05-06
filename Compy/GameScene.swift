@@ -6,10 +6,12 @@
 //
 
 import SpriteKit
+import CoreMotion
 
 class GameScene: SKScene {
     
     let cam = SKCameraNode()
+    let motionManager = CMMotionManager()
     let ground = Ground()
     let compy = Compy()
     let alien1 = Alien(position: CGPoint(x: 200, y: 250))
@@ -19,6 +21,7 @@ class GameScene: SKScene {
         self.backgroundColor = UIColor(red: 1.00, green: 0.89, blue: 0.77, alpha: 1.00)
         self.anchorPoint = .zero
         self.camera = cam
+        self.motionManager.startAccelerometerUpdates()
     
         compy.position = CGPoint(x: 150, y: 250)
         
