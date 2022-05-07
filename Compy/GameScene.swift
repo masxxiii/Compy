@@ -18,19 +18,13 @@ class GameScene: SKScene {
     
     let compy = Compy()
     
-    let alien1 = Alien(position: CGPoint(x: 300, y: 250))
-    
-    let alien2 = Alien(position: CGPoint(x: 50, y: 250))
-    
-    let battery = Battery()
-    
     var screenCenter = CGFloat()
     
-    var initialCompyPosition = CGPoint(x: 50, y: 200)
+    var initialCompyPosition = CGPoint(x: 50, y: 300)
     
     var compyProgress = CGFloat()
     
-    //function to implement any custom behavior for your scene
+    // function to implement any custom behavior for your scene
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red: 1.00, green: 0.89, blue: 0.77, alpha: 1.00)
         self.anchorPoint = .zero
@@ -38,18 +32,16 @@ class GameScene: SKScene {
         self.motionManager.startAccelerometerUpdates()
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
         screenCenter = self.size.height / 2
-    
-        compy.position = initialCompyPosition
                 
-        //positioning ground
+        // adding ground to the scene
         ground.position = CGPoint(x: -self.size.width * 2, y: 80)
         ground.size = CGSize(width: self.size.width * 6, height: 0)
         ground.tileGround()
-        
         self.addChild(ground)
+        
+        // adding Compy to the scene
+        compy.position = initialCompyPosition
         self.addChild(compy)
-        self.addChild(alien1)
-        self.addChild(alien2)
     }
     
     // method that is called by the system exactly once per frame

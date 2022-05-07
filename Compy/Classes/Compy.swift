@@ -92,15 +92,14 @@ class Compy: SKSpriteNode, GameSprite {
     // function for making our sprite stop jumping.
     func stopJumping()
     {
-        if((self.physicsBody?.velocity.dx)! == 0.0)
-        {
+        if((self.physicsBody?.velocity.dx)!.isZero) {
             self.removeAction(forKey: "jumpAnimation")
             self.removeAction(forKey: "moveAnimation")
             self.run(standAnimation, withKey: "standAnimation")
             self.jumping = false
+            
         }
-        else
-        {
+        else {
             self.removeAction(forKey: "jumpAnimation")
             self.run(moveAnimation, withKey: "moveAnimation")
             self.jumping = false
