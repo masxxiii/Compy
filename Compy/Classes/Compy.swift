@@ -24,6 +24,10 @@ class Compy: SKSpriteNode, GameSprite {
     
     var jumping = false
     
+    var movingLeft = false
+    
+    var movingRight = false
+    
     let maxHeight: CGFloat = 270
     
     let maxJumpingForce: CGFloat = 170000
@@ -107,29 +111,32 @@ class Compy: SKSpriteNode, GameSprite {
     }
     
     // function for making our sprite stop jumping.
-    func stopJumping()
-    {
-        if((self.physicsBody?.velocity.dx)!.isZero) {
-            self.removeAction(forKey: "jumpAnimation")
-            self.removeAction(forKey: "moveAnimation")
-            self.run(standAnimation, withKey: "standAnimation")
-            self.jumping = false
-            
-        }
-        else if ((self.physicsBody?.velocity.dx)! < 0) {
-            self.removeAction(forKey: "jumpAnimation")
-            self.run(moveLeftAnimation, withKey: "moveLeftAnimation")
-            self.jumping = false
-        }
-        else {
-            self.removeAction(forKey: "jumpAnimation")
-            self.run(moveRightAnimation, withKey: "moveRightAnimation")
-            self.jumping = false
-        }
+    func stopJumping() {
+        self.removeAction(forKey: "jumpAnimation")
+        self.run(standAnimation, withKey: "standAnimation")
+        self.jumping = false
+    }
+    
+    // function for making our sprite move left.
+    func moveLeft() {
+        self.removeAction(forKey: "moveRightAnimation")
+        self.run(moveLeftAnimation, withKey: "moveLeftAnimation")
+        self.movingLeft = true
+        self.movingRight = false
+    }
+    
+    // function for making our sprite move right.
+    func moveRight() {
+        self.removeAction(forKey: "moveLeftAnimation")
+        self.run(moveRightAnimation, withKey: "moveRightAnimation")
+        self.movingRight = true
+        self.movingLeft = false
     }
     
     // function for updating our sprite.
     func update() {
+        
+        // applying jump
         if (self.jumping) {
             var forceToApply = maxJumpingForce
             
@@ -146,6 +153,17 @@ class Compy: SKSpriteNode, GameSprite {
                 self.physicsBody!.velocity.dy = 300
             }
         }
+        
+        // moving left
+        if ((self.physicsBody?.velocity.dx)! < 0 && !self.movingLeft) {
+            self.moveLeft()
+        }
+        
+        // moving right
+        if ((self.physicsBody?.velocity.dx)! > 0 && !self.movingRight) {
+            self.moveRight()
+        }
+        
     }
     
     
