@@ -133,6 +133,16 @@ class Compy: SKSpriteNode, GameSprite {
         self.movingLeft = false
     }
     
+    // function for making our sprite stand still.
+    func standStill() {
+        self.removeAction(forKey: "jumpAnimation")
+        self.removeAction(forKey: "moveLeftAnimation")
+        self.removeAction(forKey: "moveRightAnimation")
+        self.run(standAnimation, withKey: "standAnimation")
+        self.movingLeft = false
+        self.movingRight = false
+    }
+    
     // function for updating our sprite.
     func update() {
         // applying jump
@@ -161,6 +171,11 @@ class Compy: SKSpriteNode, GameSprite {
         // moving right
         if ((self.physicsBody?.velocity.dx)! > 0 && !self.movingRight) {
             self.moveRight()
+        }
+        
+        // stand still
+        if ((self.physicsBody?.velocity.dx)!.isZero) {
+            self.standStill()
         }
         
     }
