@@ -135,7 +135,6 @@ class Compy: SKSpriteNode, GameSprite {
     
     // function for updating our sprite.
     func update() {
-        
         // applying jump
         if (self.jumping) {
             var forceToApply = maxJumpingForce
