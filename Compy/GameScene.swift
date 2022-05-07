@@ -30,7 +30,7 @@ class GameScene: SKScene {
         self.anchorPoint = .zero
         self.camera = cam
         self.motionManager.startAccelerometerUpdates()
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -15)
         screenCenter = self.size.height / 2
                 
         // adding ground to the scene
@@ -103,11 +103,10 @@ class GameScene: SKScene {
             
             switch UIDevice.current.orientation {
             case .landscapeLeft:
-
-                forceAmount = 13000
+                forceAmount = 17000
             
             case .landscapeRight:
-                forceAmount = -13000
+                forceAmount = -17000
             
             default:
                 forceAmount = 0
@@ -116,9 +115,8 @@ class GameScene: SKScene {
             
             if (accelData.acceleration.y > 0.15) {
                 movement.dx = -forceAmount
-                
-            } else if (accelData.acceleration.y < -0.15) {
-                
+            }
+            else if (accelData.acceleration.y < -0.15) {
                 movement.dx = forceAmount
             }
             

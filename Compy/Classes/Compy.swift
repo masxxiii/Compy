@@ -24,9 +24,9 @@ class Compy: SKSpriteNode, GameSprite {
     
     var jumping = false
     
-    let maxHeight: CGFloat = 100
+    let maxHeight: CGFloat = 270
     
-    let maxJumpingForce: CGFloat = 60000
+    let maxJumpingForce: CGFloat = 170000
     
     // initialization instance.
     init() {
@@ -76,7 +76,7 @@ class Compy: SKSpriteNode, GameSprite {
         moveRightAnimation = SKAction.repeatForever(moveRightAction)
     }
     
-    // function for adding right movement animation.
+    // function for adding left movement animation.
     func addMoveLeftAnimations() {
         let moveLeftFrames: [SKTexture] = [
             textureAtlas.textureNamed("move6"),
