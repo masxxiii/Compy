@@ -173,7 +173,7 @@ class Compy: SKSpriteNode, GameSprite {
         }
         
         // standing still
-        if ((self.physicsBody?.velocity.dx)!.isZero) {
+        if ((self.physicsBody?.velocity.dx)!.isZero && !self.jumping) {
             self.standStill()
         }
         
