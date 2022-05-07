@@ -18,7 +18,9 @@ class Compy: SKSpriteNode, GameSprite {
     
     var deadAnimation = SKAction()
     
-    var moveAnimation = SKAction()
+    var moveRightAnimation = SKAction()
+    
+    var moveLeftAnimation = SKAction()
     
     var jumping = false
     
@@ -32,7 +34,8 @@ class Compy: SKSpriteNode, GameSprite {
         addJumpAnimations()
         addStandAnimations()
         addDeadAnimations()
-        addMoveAnimations()
+        addMoveRightAnimations()
+        addMoveLeftAnimations()
         addPhysics()
         self.run(standAnimation, withKey: "standAnimation")
     }
@@ -59,9 +62,9 @@ class Compy: SKSpriteNode, GameSprite {
         deadAnimation = SKAction.repeatForever(deadAction)
     }
     
-    // function for adding move animation.
-    func addMoveAnimations() {
-        let moveFrames: [SKTexture] = [
+    // function for adding right movement animation.
+    func addMoveRightAnimations() {
+        let moveRightFrames: [SKTexture] = [
             textureAtlas.textureNamed("move1"),
             textureAtlas.textureNamed("move2"),
             textureAtlas.textureNamed("move3"),
@@ -69,8 +72,22 @@ class Compy: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("move5"),
             textureAtlas.textureNamed("move6")
         ]
-        let moveAction = SKAction.animate(with: moveFrames, timePerFrame: 0.03)
-        moveAnimation = SKAction.repeatForever(moveAction)
+        let moveRightAction = SKAction.animate(with: moveRightFrames, timePerFrame: 0.03)
+        moveRightAnimation = SKAction.repeatForever(moveRightAction)
+    }
+    
+    // function for adding right movement animation.
+    func addMoveLeftAnimations() {
+        let moveLeftFrames: [SKTexture] = [
+            textureAtlas.textureNamed("move6"),
+            textureAtlas.textureNamed("move5"),
+            textureAtlas.textureNamed("move4"),
+            textureAtlas.textureNamed("move3"),
+            textureAtlas.textureNamed("move2"),
+            textureAtlas.textureNamed("move1")
+        ]
+        let moveLeftAction = SKAction.animate(with: moveLeftFrames, timePerFrame: 0.03)
+        moveLeftAnimation = SKAction.repeatForever(moveLeftAction)
     }
     
     // function for adding physics to our sprite.
@@ -99,9 +116,14 @@ class Compy: SKSpriteNode, GameSprite {
             self.jumping = false
             
         }
+        else if ((self.physicsBody?.velocity.dx)! < 0) {
+            self.removeAction(forKey: "jumpAnimation")
+            self.run(moveLeftAnimation, withKey: "moveLeftAnimation")
+            self.jumping = false
+        }
         else {
             self.removeAction(forKey: "jumpAnimation")
-            self.run(moveAnimation, withKey: "moveAnimation")
+            self.run(moveRightAnimation, withKey: "moveRightAnimation")
             self.jumping = false
         }
     }
