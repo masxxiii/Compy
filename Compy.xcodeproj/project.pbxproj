@@ -67,13 +67,13 @@
 		A54D7F6E282548710050DF30 /* Compy */ = {
 			isa = PBXGroup;
 			children = (
+				A5C80DD42827D6B700393967 /* Controllers */,
 				A54D7F8B282563160050DF30 /* Classes */,
 				A54D7F882825625B0050DF30 /* Protocols */,
 				A54D7F6F282548710050DF30 /* AppDelegate.swift */,
 				A54D7F71282548710050DF30 /* GameScene.sks */,
 				A54D7F73282548710050DF30 /* Actions.sks */,
 				A54D7F75282548710050DF30 /* GameScene.swift */,
-				A54D7F77282548710050DF30 /* GameViewController.swift */,
 				A54D7F7C282548730050DF30 /* Assets.xcassets */,
 				A54D7F7E282548730050DF30 /* LaunchScreen.storyboard */,
 			);
@@ -97,6 +97,14 @@
 				A54D7F9028259D330050DF30 /* Battery.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		A5C80DD42827D6B700393967 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A54D7F77282548710050DF30 /* GameViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
