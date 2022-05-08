@@ -37,6 +37,7 @@ class Ground: SKSpriteNode, GameSprite {
         
         jumpWidth = tileSize.width * floor(tileCount / 3)
         solidifyGround()
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Ground.rawValue
     }
     
     // function for checking reposition.
