@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50831C6282847A9007A6B61 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50831C5282847A9007A6B61 /* Enums.swift */; };
 		A54D7F70282548710050DF30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F6F282548710050DF30 /* AppDelegate.swift */; };
 		A54D7F76282548710050DF30 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F75282548710050DF30 /* GameScene.swift */; };
 		A54D7F78282548710050DF30 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F77282548710050DF30 /* GameViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A50831C5282847A9007A6B61 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A54D7F6C282548710050DF30 /* Compy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54D7F6F282548710050DF30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54D7F75282548710050DF30 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A50831C428284785007A6B61 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A50831C5282847A9007A6B61 /* Enums.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A54D7F63282548710050DF30 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		A54D7F6E282548710050DF30 /* Compy */ = {
 			isa = PBXGroup;
 			children = (
+				A50831C428284785007A6B61 /* Utils */,
 				A50831C2282802AC007A6B61 /* Views */,
 				A5C80DD62827D90200393967 /* Encounters */,
 				A5C80DD52827D7ED00393967 /* Scenes */,
@@ -223,6 +234,7 @@
 				A54D7F70282548710050DF30 /* AppDelegate.swift in Sources */,
 				A54D7F8A282562920050DF30 /* GameSprite.swift in Sources */,
 				A54D7F87282562060050DF30 /* Alien.swift in Sources */,
+				A50831C6282847A9007A6B61 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TZTSS56N88;
@@ -386,7 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TZTSS56N88;
