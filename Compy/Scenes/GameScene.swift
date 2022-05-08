@@ -26,6 +26,8 @@ class GameScene: SKScene {
     
     var compyProgress = CGFloat()
     
+    var nextEncounterSpawnPosition = CGFloat(150)
+    
     // function to implement any custom behavior for your scene
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red: 1.00, green: 0.89, blue: 0.77, alpha: 1.00)
@@ -67,6 +69,12 @@ class GameScene: SKScene {
         self.camera!.position = CGPoint(x: compy.position.x, y: cameraYPos)
         compyProgress = compy.position.x - initialCompyPosition.x
         ground.checkForReposition(compyProgress: compyProgress)
+        
+        // Check to see if we should set a new encounter:
+        if compy.position.x > nextEncounterSpawnPosition {
+            encounterManager.placeNextEncounter(currentXPos: nextEncounterSpawnPosition)
+            nextEncounterSpawnPosition += 1200
+        }
     }
     
     //UIKit calls this function when a new touch is detected in a view or window
