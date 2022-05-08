@@ -101,6 +101,13 @@ class Compy: SKSpriteNode, GameSprite {
         self.physicsBody?.linearDamping = 0.9
         self.physicsBody?.mass = 30
         self.physicsBody?.allowsRotation = false
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Compy.rawValue
+        self.physicsBody?.contactTestBitMask =
+            PhysicsCategory.Alien.rawValue |
+            PhysicsCategory.Droid.rawValue |
+            PhysicsCategory.Powerup.rawValue |
+            PhysicsCategory.Ground.rawValue
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Ground.rawValue
     }
     
     // function for making our sprite start jumping.
