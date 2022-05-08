@@ -10,7 +10,8 @@ import SpriteKit
 class EncounterManager {
     
     let encounterNames: [String] = [
-        "EncounterA"
+        "EncounterA",
+        "EncounterB"
     ]
     
     var encounters: [SKNode] = []

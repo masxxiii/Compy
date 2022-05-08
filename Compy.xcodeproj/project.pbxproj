@@ -22,6 +22,7 @@
 		A5C80DDA2827DAEE00393967 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = A5C80DD92827DAEE00393967 /* EncounterA.sks */; };
 		A5C80DDE2827DCAA00393967 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C80DDD2827DCAA00393967 /* EncounterManager.swift */; };
 		A5C80DE02827E3E800393967 /* Droid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C80DDF2827E3E800393967 /* Droid.swift */; };
+		A5C80DE62827E72700393967 /* EncounterB.sks in Resources */ = {isa = PBXBuildFile; fileRef = A5C80DE52827E72700393967 /* EncounterB.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A5C80DD92827DAEE00393967 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
 		A5C80DDD2827DCAA00393967 /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 		A5C80DDF2827E3E800393967 /* Droid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Droid.swift; sourceTree = "<group>"; };
+		A5C80DE52827E72700393967 /* EncounterB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterB.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C80DD92827DAEE00393967 /* EncounterA.sks */,
+				A5C80DE52827E72700393967 /* EncounterB.sks */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				A54D7F72282548710050DF30 /* GameScene.sks in Resources */,
 				A5C80DDA2827DAEE00393967 /* EncounterA.sks in Resources */,
+				A5C80DE62827E72700393967 /* EncounterB.sks in Resources */,
 				A54D7F7D282548730050DF30 /* Assets.xcassets in Resources */,
 				A54D7F80282548730050DF30 /* LaunchScreen.storyboard in Resources */,
 				A54D7F74282548710050DF30 /* Actions.sks in Resources */,
