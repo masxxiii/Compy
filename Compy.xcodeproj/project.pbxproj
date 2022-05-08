@@ -54,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50831C2282802AC007A6B61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A54D7F7E282548730050DF30 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A54D7F63282548710050DF30 = {
 			isa = PBXGroup;
 			children = (
@@ -73,13 +81,13 @@
 		A54D7F6E282548710050DF30 /* Compy */ = {
 			isa = PBXGroup;
 			children = (
+				A50831C2282802AC007A6B61 /* Views */,
 				A5C80DD62827D90200393967 /* Encounters */,
 				A5C80DD52827D7ED00393967 /* Scenes */,
 				A5C80DD42827D6B700393967 /* Controllers */,
 				A54D7F8B282563160050DF30 /* Classes */,
 				A54D7F882825625B0050DF30 /* Protocols */,
 				A54D7F7C282548730050DF30 /* Assets.xcassets */,
-				A54D7F7E282548730050DF30 /* LaunchScreen.storyboard */,
 			);
 			path = Compy;
 			sourceTree = "<group>";
