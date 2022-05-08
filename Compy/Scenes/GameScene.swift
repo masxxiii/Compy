@@ -14,6 +14,8 @@ class GameScene: SKScene {
     
     let motionManager = CMMotionManager()
     
+    let encounterManager = EncounterManager()
+    
     let ground = Ground()
     
     let compy = Compy()
@@ -42,6 +44,9 @@ class GameScene: SKScene {
         // adding Compy to the scene
         compy.position = initialCompyPosition
         self.addChild(compy)
+        
+        encounterManager.addEncountersToScene(gameScene: self)
+        encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
     }
     
     // method that is called by the system exactly once per frame

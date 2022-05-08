@@ -15,11 +15,10 @@ class Alien: SKSpriteNode, GameSprite {
     var animation = SKAction()
     
     // initialization instance.
-    init(position: CGPoint) {
+    init() {
         super.init(texture: nil, color: .clear, size: initialSize)
         addAnimations()
         addPhysics()
-        self.position = position
         self.run(animation)
     }
     
