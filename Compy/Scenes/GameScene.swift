@@ -85,7 +85,7 @@ class GameScene: SKScene {
             if batteryRandom == 0 {
                 // Only move the star if it is off the screen.
                 if abs(compy.position.x - powerUpBattery.position.x) > 1200 {
-                    powerUpBattery.position = CGPoint(x: nextEncounterSpawnPosition, y: 60.0)
+                    powerUpBattery.position = CGPoint(x: nextEncounterSpawnPosition, y: 100.0)
                     // Remove any previous velocity and spin:
                     powerUpBattery.physicsBody?.angularVelocity = 0
                     powerUpBattery.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
