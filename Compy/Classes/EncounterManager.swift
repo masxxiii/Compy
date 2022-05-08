@@ -11,7 +11,8 @@ class EncounterManager {
     
     let encounterNames: [String] = [
         "EncounterA",
-        "EncounterB"
+        "EncounterB",
+        "EncounterC"
     ]
     
     var encounters: [SKNode] = []
