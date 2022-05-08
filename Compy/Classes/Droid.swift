@@ -20,6 +20,8 @@ class Droid: SKSpriteNode, GameSprite {
         addAnimations()
         addPhysics()
         self.run(animation)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Droid.rawValue
+        self.physicsBody?.collisionBitMask = ~PhysicsCategory.DamagedCompy.rawValue
     }
     
     // function for adding animations to our sprite.
