@@ -19,6 +19,7 @@
 		A54D7F8D282571750050DF30 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F8C282571750050DF30 /* Ground.swift */; };
 		A54D7F8F28257A730050DF30 /* Compy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F8E28257A730050DF30 /* Compy.swift */; };
 		A54D7F9128259D330050DF30 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F9028259D330050DF30 /* Battery.swift */; };
+		A5C80DDA2827DAEE00393967 /* EncounterA.sks in Resources */ = {isa = PBXBuildFile; fileRef = A5C80DD92827DAEE00393967 /* EncounterA.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A54D7F8C282571750050DF30 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		A54D7F8E28257A730050DF30 /* Compy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compy.swift; sourceTree = "<group>"; };
 		A54D7F9028259D330050DF30 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		A5C80DD92827DAEE00393967 /* EncounterA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterA.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		A54D7F6E282548710050DF30 /* Compy */ = {
 			isa = PBXGroup;
 			children = (
+				A5C80DD62827D90200393967 /* Encounters */,
 				A5C80DD52827D7ED00393967 /* Scenes */,
 				A5C80DD42827D6B700393967 /* Controllers */,
 				A54D7F8B282563160050DF30 /* Classes */,
@@ -113,6 +116,14 @@
 				A54D7F75282548710050DF30 /* GameScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A5C80DD62827D90200393967 /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+				A5C80DD92827DAEE00393967 /* EncounterA.sks */,
+			);
+			path = Encounters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54D7F72282548710050DF30 /* GameScene.sks in Resources */,
+				A5C80DDA2827DAEE00393967 /* EncounterA.sks in Resources */,
 				A54D7F7D282548730050DF30 /* Assets.xcassets in Resources */,
 				A54D7F80282548730050DF30 /* LaunchScreen.storyboard in Resources */,
 				A54D7F74282548710050DF30 /* Actions.sks in Resources */,
