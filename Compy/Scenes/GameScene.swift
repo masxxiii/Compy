@@ -20,6 +20,8 @@ class GameScene: SKScene {
     
     let compy = Compy()
     
+    let powerUpBattery = Battery()
+    
     var screenCenter = CGFloat()
     
     var initialCompyPosition = CGPoint(x: 50, y: 300)
@@ -46,6 +48,10 @@ class GameScene: SKScene {
         // adding Compy to the scene
         compy.position = initialCompyPosition
         self.addChild(compy)
+        
+        // adding battery to the scene
+        powerUpBattery.position = CGPoint(x: -2000, y: -2000)
+        self.addChild(powerUpBattery)
         
         encounterManager.addEncountersToScene(gameScene: self)
         encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
@@ -74,6 +80,17 @@ class GameScene: SKScene {
         if compy.position.x > nextEncounterSpawnPosition {
             encounterManager.placeNextEncounter(currentXPos: nextEncounterSpawnPosition)
             nextEncounterSpawnPosition += 1200
+            // Each encounter has a 10% chance to spawn a star:
+            let batteryRandom = Int(arc4random_uniform(10))
+            if batteryRandom == 0 {
+                // Only move the star if it is off the screen.
+                if abs(compy.position.x - powerUpBattery.position.x) > 1200 {
+                    powerUpBattery.position = CGPoint(x: nextEncounterSpawnPosition, y: 60.0)
+                    // Remove any previous velocity and spin:
+                    powerUpBattery.physicsBody?.angularVelocity = 0
+                    powerUpBattery.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                }
+            }
         }
     }
     
