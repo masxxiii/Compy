@@ -20,6 +20,8 @@ class Alien: SKSpriteNode, GameSprite {
         addAnimations()
         addPhysics()
         self.run(animation)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Alien.rawValue
+        self.physicsBody?.collisionBitMask = ~PhysicsCategory.DamagedCompy.rawValue
     }
     
     // function for adding animations to our sprite.
