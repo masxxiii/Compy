@@ -22,6 +22,7 @@ class Battery: SKSpriteNode, GameSprite {
         super.init(texture: batteryTexture, color: .clear, size: initialSize)
         self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Powerup.rawValue
         addAnimations()
         self.run(pulseAnimation)
     }
