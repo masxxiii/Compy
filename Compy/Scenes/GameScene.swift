@@ -8,7 +8,7 @@
 import SpriteKit
 import CoreMotion
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let cam = SKCameraNode()
     
@@ -53,8 +53,51 @@ class GameScene: SKScene {
         powerUpBattery.position = CGPoint(x: -2000, y: -2000)
         self.addChild(powerUpBattery)
         
+        // adding encounters
         encounterManager.addEncountersToScene(gameScene: self)
         encounterManager.encounters[0].position = CGPoint(x: 400, y: 330)
+        
+        // adding physics world
+        self.physicsWorld.contactDelegate = self
+    }
+    
+    // method that is fired when contact occurs
+    func didBegin(_ contact: SKPhysicsContact) {
+        // Each contact has two bodies,
+        // We do not know which is which.
+        // We will find the compy body first, then use
+        // the other body to determine the type of contact.
+        let otherBody: SKPhysicsBody
+        // Combine the two compy physics categories into one
+        // bitmask using the bitwise OR operator |
+        let compyMask = PhysicsCategory.Compy.rawValue |
+            PhysicsCategory.DamagedCompy.rawValue
+        // Use the bitwise AND operator & to find the compy.
+        // This returns a positive number if body A's category
+        // is the same as either the penguin or damagedCompy:
+        if (contact.bodyA.categoryBitMask & compyMask) > 0 {
+            // bodyA is the compy, we will test bodyB's type:
+            otherBody = contact.bodyB
+        }
+        else {
+            // bodyB is the compy, we will test bodyA's type:
+            otherBody = contact.bodyA
+        }
+        
+        // Find the type of contact:
+        switch otherBody.categoryBitMask {
+        
+        case PhysicsCategory.Ground.rawValue:
+            print("hit the ground")
+        case PhysicsCategory.Alien.rawValue:
+            print("take damage")
+        case PhysicsCategory.Droid.rawValue:
+            print("take damage")
+        case PhysicsCategory.Powerup.rawValue:
+            print("power-up")
+        default:
+            print("Contact with no game logic")
+        }
     }
     
     // method that is called by the system exactly once per frame
