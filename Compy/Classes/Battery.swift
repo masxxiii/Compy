@@ -14,7 +14,7 @@ class Battery: SKSpriteNode, GameSprite {
     
     var pulseAnimation = SKAction()
     
-    var value = 10
+    var value = 100
     
     // initialization instance.
     init() {

@@ -88,19 +88,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Find the type of contact:
         switch otherBody.categoryBitMask {
-        
-        case PhysicsCategory.Ground.rawValue:
-            print("hit the ground")
+            
         case PhysicsCategory.Alien.rawValue:
-            print("take damage")
             compy.takeDamage()
         case PhysicsCategory.Droid.rawValue:
-            print("take damage")
             compy.takeDamage()
         case PhysicsCategory.Powerup.rawValue:
-            print("power-up")
+            if let battery = otherBody.node as? Battery {
+                battery.collect()
+                batteryCollected += battery.value
+            }
         default:
-            print("Contact with no game logic")
+            return
         }
     }
     
@@ -128,7 +127,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             encounterManager.placeNextEncounter(currentXPos: nextEncounterSpawnPosition)
             nextEncounterSpawnPosition += 1200
             // Each encounter has a 10% chance to spawn a star:
-            let batteryRandom = Int(arc4random_uniform(10))
+            let batteryRandom = Int(arc4random_uniform(2))
             if batteryRandom == 0 {
                 // Only move the star if it is off the screen.
                 if abs(compy.position.x - powerUpBattery.position.x) > 1200 {
