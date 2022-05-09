@@ -18,6 +18,8 @@ class Compy: SKSpriteNode, GameSprite {
     
     var deadAnimation = SKAction()
     
+    var damagedAnimation = SKAction()
+    
     var moveRightAnimation = SKAction()
     
     var moveLeftAnimation = SKAction()
@@ -27,6 +29,10 @@ class Compy: SKSpriteNode, GameSprite {
     var movingLeft = false
     
     var movingRight = false
+    
+    var damaged = false
+    
+    var health: Int = 3
     
     let maxHeight: CGFloat = 270
     
@@ -115,6 +121,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.removeAction(forKey: "standAnimation")
         self.run(jumpAnimation, withKey: "jumpAnimation")
         self.jumping = true
+        if self.health <= 0 { return }
     }
     
     // function for making our sprite stop jumping.
@@ -129,6 +136,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.run(moveLeftAnimation, withKey: "moveLeftAnimation")
         self.movingLeft = true
         self.movingRight = false
+        if self.health <= 0 { return }
     }
     
     // function for making our sprite move right.
@@ -137,6 +145,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.run(moveRightAnimation, withKey: "moveRightAnimation")
         self.movingRight = true
         self.movingLeft = false
+        if self.health <= 0 { return }
     }
     
     // function for making our sprite stand still.
@@ -147,6 +156,27 @@ class Compy: SKSpriteNode, GameSprite {
         self.run(standAnimation, withKey: "standAnimation")
         self.movingLeft = false
         self.movingRight = false
+        if self.health <= 0 { return }
+    }
+    
+    // function for making our sprite dead.
+    func dead() {
+        // Make sure the player is fully visible:
+        self.alpha = 1
+        self.removeAllActions()
+        self.run(self.deadAnimation)
+        self.jumping = false
+    }
+    
+    // function for taking damage.
+    func takeDamage() {
+        if self.damaged { return }
+        self.health -= 1
+        if self.health == 0 {
+            dead()
+        } else {
+            self.run(self.damagedAnimation)
+        }
     }
     
     // function for updating our sprite.
