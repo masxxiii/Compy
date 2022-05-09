@@ -18,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let ground = Ground()
     
+    let hud = HUD()
+    
     let compy = Compy()
     
     let powerUpBattery = Battery()
@@ -61,6 +63,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // adding physics world
         self.physicsWorld.contactDelegate = self
+        
+        // add HUD node to camera node
+        self.addChild(self.camera!)
+        self.camera!.zPosition = 50
+        // Create the HUD's child nodes:
+        hud.createHudNodes(screenSize: self.size)
+        // Add the HUD to the camera's node tree:
+        self.camera!.addChild(hud)
     }
     
     // method that is fired when contact occurs
@@ -91,12 +101,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         case PhysicsCategory.Alien.rawValue:
             compy.takeDamage()
+            hud.setHealthDisplay(newHealth: compy.health)
         case PhysicsCategory.Droid.rawValue:
             compy.takeDamage()
+            hud.setHealthDisplay(newHealth: compy.health)
         case PhysicsCategory.Battery.rawValue:
             if let battery = otherBody.node as? Battery {
                 battery.collect()
                 batteryCollected += battery.value
+                hud.updateScore(newBatteryCount: self.batteryCollected)
             }
         default:
             return

@@ -17,7 +17,7 @@ class HUD: SKNode {
     var totalScore: SKLabelNode = SKLabelNode(text: "000000")
     
     // function for creating HUD nodes
-    func creatHudNodes(screenSize: CGSize) {
+    func createHudNodes(screenSize: CGSize) {
         let cameraOrigin = CGPoint(x: screenSize.width / 2, y: screenSize.height / 2)
         
         let batteryIcon = SKSpriteNode(texture: batteryAtlas.textureNamed("battery"))
@@ -34,7 +34,7 @@ class HUD: SKNode {
         self.addChild(totalScore)
         
         for index in 0 ..< 3 {
-            let newHealthNode = SKSpriteNode(texture: textureAtlas.textureNamed("heart"))
+            let newHealthNode = SKSpriteNode(texture: textureAtlas.textureNamed("health"))
             newHealthNode.size = CGSize (width: 46, height: 40)
             // Position the hearts below the coins:
             let xPos = -cameraOrigin.x + CGFloat(index * 58) + 33
