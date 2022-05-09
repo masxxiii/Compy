@@ -188,10 +188,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
             }
             
-            if (accelData.acceleration.y > 0.15) {
+            if (accelData.acceleration.y > 0.15 && !compy.isDead) {
                 movement.dx = -forceAmount
             }
-            else if (accelData.acceleration.y < -0.15) {
+            else if (accelData.acceleration.y < -0.15 && !compy.isDead) {
                 movement.dx = forceAmount
             }
             
