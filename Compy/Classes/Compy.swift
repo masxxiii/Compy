@@ -46,6 +46,7 @@ class Compy: SKSpriteNode, GameSprite {
         addJumpAnimations()
         addStandAnimations()
         addDeadAnimations()
+        addDamagedAnimations()
         addMoveRightAnimations()
         addMoveLeftAnimations()
         addPhysics()
@@ -72,6 +73,41 @@ class Compy: SKSpriteNode, GameSprite {
         let deadFrames: [SKTexture] = [textureAtlas.textureNamed("dead")]
         let deadAction = SKAction.animate(with: deadFrames, timePerFrame: 0.03)
         deadAnimation = SKAction.repeatForever(deadAction)
+    }
+    
+    // function for adding damaged animation.
+    func addDamagedAnimations() {
+        // --- Create the taking damage animation ---
+        let damageStart = SKAction.run {
+            // Allow the compy to pass through enemies:
+            self.physicsBody?.categoryBitMask = PhysicsCategory.DamagedCompy.rawValue
+        }
+        // Create an opacity pulse, slow at first and fast at the end:
+        let slowFade = SKAction.sequence([
+            SKAction.fadeAlpha(to: 0.3, duration: 0.35),
+            SKAction.fadeAlpha(to: 0.7, duration: 0.35)
+            ])
+        let fastFade = SKAction.sequence([
+            SKAction.fadeAlpha(to: 0.3, duration: 0.2),
+            SKAction.fadeAlpha(to: 0.7, duration: 0.2)
+            ])
+        let fadeOutAndIn = SKAction.sequence([
+            SKAction.repeat(slowFade, count: 2),
+            SKAction.repeat(fastFade, count: 5),
+            SKAction.fadeAlpha(to: 1, duration: 0.15)
+            ])
+        // Return the compy to normal:
+        let damageEnd = SKAction.run {
+            self.physicsBody?.categoryBitMask = PhysicsCategory.Compy.rawValue
+            // Turn off the newly damaged flag:
+            self.damaged = false
+        }
+        // Store the whole sequence in the damageAnimation property:
+        self.damagedAnimation = SKAction.sequence([
+            damageStart,
+            fadeOutAndIn,
+            damageEnd
+            ])
     }
     
     // function for adding right movement animation.
@@ -174,6 +210,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.health -= 1
         if self.health == 0 {
             dead()
+            self.damaged = true
             self.isDead = true
         } else {
             self.run(self.damagedAnimation)
