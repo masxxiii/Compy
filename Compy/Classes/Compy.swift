@@ -32,6 +32,8 @@ class Compy: SKSpriteNode, GameSprite {
     
     var damaged = false
     
+    var isDead = false
+    
     var health: Int = 3
     
     let maxHeight: CGFloat = 270
@@ -161,11 +163,9 @@ class Compy: SKSpriteNode, GameSprite {
     
     // function for making our sprite dead.
     func dead() {
-        // Make sure the player is fully visible:
         self.alpha = 1
         self.removeAllActions()
         self.run(self.deadAnimation)
-        self.jumping = false
     }
     
     // function for taking damage.
@@ -174,6 +174,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.health -= 1
         if self.health == 0 {
             dead()
+            self.isDead = true
         } else {
             self.run(self.damagedAnimation)
         }
@@ -181,6 +182,12 @@ class Compy: SKSpriteNode, GameSprite {
     
     // function for updating our sprite.
     func update() {
+        
+        // is dead
+        if (self.isDead) {
+            return
+        }
+        
         // applying jump
         if (self.jumping) {
             var forceToApply = maxJumpingForce

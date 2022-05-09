@@ -91,8 +91,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("hit the ground")
         case PhysicsCategory.Alien.rawValue:
             print("take damage")
+            compy.takeDamage()
         case PhysicsCategory.Droid.rawValue:
             print("take damage")
+            compy.takeDamage()
         case PhysicsCategory.Powerup.rawValue:
             print("power-up")
         default:
