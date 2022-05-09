@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let powerUpBattery = Battery()
     
+    var batteryCollected = 0
+    
     var screenCenter = CGFloat()
     
     var initialCompyPosition = CGPoint(x: 50, y: 300)
