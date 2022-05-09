@@ -71,28 +71,18 @@ class Compy: SKSpriteNode, GameSprite {
     // function for adding dead animation.
     func addDeadAnimations() {
         let startDie = SKAction.run {
-            // change size
             self.size = CGSize(width: 60, height: 65)
-            // Switch to the death texture with X eyes:
             self.texture = self.textureAtlas.textureNamed("dead")
-            // Suspend the penguin in space:
             self.physicsBody?.affectedByGravity = false
-            // Stop any movement:
             self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         }
          
         let endDie = SKAction.run {
-            // Turn gravity back on:
             self.physicsBody?.affectedByGravity = true
         }
          
         self.deadAnimation = SKAction.sequence([
             startDie,
-            // Scale the penguin bigger:
-            SKAction.scale(to: 1.3, duration: 0.5),
-            // Use the waitForDuration action to provide a short pause:
-            SKAction.wait(forDuration: 0.5),
-            // Rotate the penguin on to his back:
             SKAction.rotate(toAngle: 3, duration: 1.5),
             SKAction.wait(forDuration: 0.5),
             endDie
