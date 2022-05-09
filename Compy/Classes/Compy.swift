@@ -58,21 +58,45 @@ class Compy: SKSpriteNode, GameSprite {
     {
         let jumpFrames: [SKTexture] = [textureAtlas.textureNamed("jump")]
         let jumpAction = SKAction.animate(with: jumpFrames, timePerFrame: 0.03)
-        jumpAnimation = SKAction.repeatForever(jumpAction)
+        self.jumpAnimation = SKAction.repeatForever(jumpAction)
     }
     
     // function for adding stand animation.
     func addStandAnimations() {
         let standFrames: [SKTexture] = [textureAtlas.textureNamed("stand")]
         let standAction = SKAction.animate(with: standFrames, timePerFrame: 0.03)
-        standAnimation = SKAction.repeatForever(standAction)
+        self.standAnimation = SKAction.repeatForever(standAction)
     }
     
     // function for adding dead animation.
     func addDeadAnimations() {
-        let deadFrames: [SKTexture] = [textureAtlas.textureNamed("dead")]
-        let deadAction = SKAction.animate(with: deadFrames, timePerFrame: 0.03)
-        deadAnimation = SKAction.repeatForever(deadAction)
+        let startDie = SKAction.run {
+            // change size
+            self.size = CGSize(width: 60, height: 65)
+            // Switch to the death texture with X eyes:
+            self.texture = self.textureAtlas.textureNamed("dead")
+            // Suspend the penguin in space:
+            self.physicsBody?.affectedByGravity = false
+            // Stop any movement:
+            self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        }
+         
+        let endDie = SKAction.run {
+            // Turn gravity back on:
+            self.physicsBody?.affectedByGravity = true
+        }
+         
+        self.deadAnimation = SKAction.sequence([
+            startDie,
+            // Scale the penguin bigger:
+            SKAction.scale(to: 1.3, duration: 0.5),
+            // Use the waitForDuration action to provide a short pause:
+            SKAction.wait(forDuration: 0.5),
+            // Rotate the penguin on to his back:
+            SKAction.rotate(toAngle: 3, duration: 1.5),
+            SKAction.wait(forDuration: 0.5),
+            endDie
+            ])
     }
     
     // function for adding damaged animation.
@@ -121,7 +145,7 @@ class Compy: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("move6")
         ]
         let moveRightAction = SKAction.animate(with: moveRightFrames, timePerFrame: 0.03)
-        moveRightAnimation = SKAction.repeatForever(moveRightAction)
+        self.moveRightAnimation = SKAction.repeatForever(moveRightAction)
     }
     
     // function for adding left movement animation.
@@ -135,7 +159,7 @@ class Compy: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("move1")
         ]
         let moveLeftAction = SKAction.animate(with: moveLeftFrames, timePerFrame: 0.03)
-        moveLeftAnimation = SKAction.repeatForever(moveLeftAction)
+        self.moveLeftAnimation = SKAction.repeatForever(moveLeftAction)
     }
     
     // function for adding physics to our sprite.
