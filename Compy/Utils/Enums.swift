@@ -13,5 +13,5 @@ enum PhysicsCategory: UInt32 {
     case Ground = 4
     case Alien = 8
     case Droid = 16
-    case Powerup = 32
+    case Battery = 32
 }

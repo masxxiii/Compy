@@ -163,7 +163,7 @@ class Compy: SKSpriteNode, GameSprite {
         self.physicsBody?.contactTestBitMask =
             PhysicsCategory.Alien.rawValue |
             PhysicsCategory.Droid.rawValue |
-            PhysicsCategory.Powerup.rawValue |
+            PhysicsCategory.Battery.rawValue |
             PhysicsCategory.Ground.rawValue
         self.physicsBody?.collisionBitMask = PhysicsCategory.Ground.rawValue
     }

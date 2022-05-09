@@ -22,7 +22,7 @@ class Battery: SKSpriteNode, GameSprite {
         super.init(texture: batteryTexture, color: .clear, size: initialSize)
         self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = PhysicsCategory.Powerup.rawValue
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Battery.rawValue
         addAnimations()
         self.run(pulseAnimation)
     }
@@ -65,7 +65,7 @@ class Battery: SKSpriteNode, GameSprite {
             self.alpha = 1
             self.xScale = 1
             self.yScale = 1
-            self.physicsBody?.categoryBitMask = PhysicsCategory.Powerup.rawValue
+            self.physicsBody?.categoryBitMask = PhysicsCategory.Battery.rawValue
         }
         // Combine the actions into a sequence:
         let collectSequence = SKAction.sequence([

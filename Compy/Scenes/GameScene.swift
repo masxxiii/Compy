@@ -93,7 +93,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             compy.takeDamage()
         case PhysicsCategory.Droid.rawValue:
             compy.takeDamage()
-        case PhysicsCategory.Powerup.rawValue:
+        case PhysicsCategory.Battery.rawValue:
             if let battery = otherBody.node as? Battery {
                 battery.collect()
                 batteryCollected += battery.value
