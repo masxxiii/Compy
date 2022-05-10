@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A50831C6282847A9007A6B61 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50831C5282847A9007A6B61 /* Enums.swift */; };
 		A50831C8282940D1007A6B61 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50831C7282940D1007A6B61 /* HUD.swift */; };
+		A50831CB282A8A28007A6B61 /* CompySmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = A50831C9282A8A28007A6B61 /* CompySmoke.sks */; };
+		A50831CC282A8A28007A6B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A50831CA282A8A28007A6B61 /* Assets.xcassets */; };
 		A54D7F70282548710050DF30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F6F282548710050DF30 /* AppDelegate.swift */; };
 		A54D7F76282548710050DF30 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F75282548710050DF30 /* GameScene.swift */; };
 		A54D7F78282548710050DF30 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7F77282548710050DF30 /* GameViewController.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		A50831C5282847A9007A6B61 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A50831C7282940D1007A6B61 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		A50831C9282A8A28007A6B61 /* CompySmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CompySmoke.sks; sourceTree = "<group>"; };
+		A50831CA282A8A28007A6B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A54D7F6C282548710050DF30 /* Compy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54D7F6F282548710050DF30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54D7F75282548710050DF30 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				A5C80DD92827DAEE00393967 /* EncounterA.sks */,
 				A5C80DE52827E72700393967 /* EncounterB.sks */,
 				A5C80DE72827F9BB00393967 /* EncounterC.sks */,
+				A50831C9282A8A28007A6B61 /* CompySmoke.sks */,
+				A50831CA282A8A28007A6B61 /* Assets.xcassets */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 				A5C80DE62827E72700393967 /* EncounterB.sks in Resources */,
 				A5C80DE82827F9BB00393967 /* EncounterC.sks in Resources */,
 				A54D7F7D282548730050DF30 /* Assets.xcassets in Resources */,
+				A50831CC282A8A28007A6B61 /* Assets.xcassets in Resources */,
+				A50831CB282A8A28007A6B61 /* CompySmoke.sks in Resources */,
 				A54D7F80282548730050DF30 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
