@@ -24,6 +24,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let powerUpBattery = Battery()
     
+    let smokeEmitter = SKEmitterNode(fileNamed: "CompySmoke")
+    
     var batteryCollected = 0
     
     var screenCenter = CGFloat()
@@ -73,13 +75,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.camera!.addChild(hud)
         
         // add particle node to compy
-        if let smokeEmitter = SKEmitterNode(fileNamed: "CompySmoke") {
-            compy.zPosition = 10
-            smokeEmitter.particleZPosition = -1
-            compy.addChild(smokeEmitter)
-            smokeEmitter.targetNode = self
-        }
-        
+        compy.zPosition = 10
+        smokeEmitter!.particleZPosition = -1
+        smokeEmitter!.position.y = -40
+        smokeEmitter!.targetNode = self
+        smokeEmitter!.isPaused = true
+        compy.addChild(smokeEmitter!)
     }
     
     // method that is fired when contact occurs
@@ -160,6 +161,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
+        
+        // unpause the particle emitter
+        if ((compy.physicsBody?.velocity.dx)! != 0) {
+            smokeEmitter!.isPaused = false
+        }
     }
     
     //UIKit calls this function when a new touch is detected in a view or window
@@ -208,7 +214,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             default:
                 forceAmount = 0
-                
             }
             
             if (accelData.acceleration.y > 0.15 && !compy.isDead) {
