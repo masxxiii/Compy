@@ -15,7 +15,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](./Compy/Assets.xcassets/Compy.spriteatlas/AppIcon.appiconset/1024.png)
+![screenshot](./Compy/Assets.xcassets/AppIcon.appiconset/1024.png)
 
 ## Main Technologies
 
