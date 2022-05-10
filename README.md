@@ -28,4 +28,14 @@ This software uses the following main technologies:
 
 Use **iphones** and **ipads** of any screen size to play. Click on the Compy icon to start the game. You will be greeted by the main menu. Here you have to touch the play button to start the game.
 
-![screenshot](./Compy/Assets.xcassets/AppIcon.appiconset/1024.png)
+![screenshot](./Compy/Assets.xcassets/Screenshots/menu-selection.imageset/menu-selection.png)
+
+Once in the main game scene, you can move Compy left and right by using the internal accelerometer. You can tilt your device right to move Compy right and vice-versa. Collect batteries to increase your score and avoid aliens and droids at all cost! Just for fun you can push one of the droids into the abyss :)
+
+![screenshot](./Compy/Assets.xcassets/Screenshots/gameplay.imageset/gameplay.png)
+
+If you are one of us unlucky ones, your Compy will die on your first try. But don't worry because you can always try again ;)
+
+![screenshot](./Compy/Assets.xcassets/Screenshots/gameover.imageset/gameover.png)
+
+
