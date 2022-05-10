@@ -45,4 +45,5 @@ Feel free to download the project and build upon it. You can add new features, r
 ## License
 
 Distributed under the MIT License. See LICENSE for more information.
+<br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
