@@ -40,8 +40,9 @@ class HUD: SKNode {
         restartButton.name = "restartGame"
         menuButton.name = "returnToMenu"
         menuButton.position = CGPoint(x: -140, y: 0)
+        restartButton.position = CGPoint(x: 140, y: 0)
         // Size the button nodes:
-        restartButton.size = CGSize(width: 140, height: 140)
+        restartButton.size = CGSize(width: 80, height: 80)
         menuButton.size = CGSize(width: 70, height: 70)
         
         self.addChild(batteryIcon)
@@ -93,14 +94,13 @@ class HUD: SKNode {
     
     // function to show hidden buttons
     func showHiddenButtons() {
-        // Set the button alpha to 0:
         restartButton.alpha = 0
         menuButton.alpha = 0
-        // Add the button nodes to the HUD:
         self.addChild(restartButton)
         self.addChild(menuButton)
+        
         // Fade in the buttons:
-        let fadeAnimation = SKAction.fadeAlpha(to: 1, duration: 0.4)
+        let fadeAnimation = SKAction.fadeAlpha(to: 1, duration: 0.3)
         restartButton.run(fadeAnimation)
         menuButton.run(fadeAnimation)
     }
