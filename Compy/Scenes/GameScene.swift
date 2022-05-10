@@ -182,8 +182,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 gameSprite.onTap()
                 compy.startJumping()
             }
+            
+            // Check for HUD buttons:
+            if nodeTouched.name == "restartGame" {
+                // Transition to a new version of the GameScene
+                // to restart the game
+                self.view?.presentScene(GameScene(size: self.size),
+                                        transition: .crossFade(withDuration: 0.6))
+            }
+            else if nodeTouched.name == "returnToMenu" {
+                // Transition to the main menu scene:
+                self.view?.presentScene(MenuScene(size: self.size),
+                                        transition: .crossFade(withDuration: 0.6))
+            }
         }
-        
     }
     
     //UIKit calls this method when a finger or Apple Pencil is no longer touching the screen
