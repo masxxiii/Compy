@@ -40,7 +40,7 @@ class MenuScene: SKScene {
         let startText = SKLabelNode(fontNamed: "AvenirNext-HeavyItalic")
         startText.text = "Click Play To Start The Game."
         startText.verticalAlignmentMode = .center
-        startText.position = CGPoint(x: 0, y: -100)
+        startText.position = CGPoint(x: 0, y: -120)
         startText.fontSize = 30
         startText.name = "StartText"
         startText.zPosition = 5
@@ -63,6 +63,10 @@ class MenuScene: SKScene {
             let location = touch.location(in: self)
             // Locate the node at this location:
             let nodeTouched = atPoint(location)
+            
+            if nodeTouched.name == "StartButton" {
+                self.view?.presentScene(GameScene(size: self.size))
+            }
         }
     }
 }
