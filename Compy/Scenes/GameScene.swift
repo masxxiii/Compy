@@ -226,4 +226,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             compy.physicsBody?.applyForce(movement)
         }
     }
+    
+    // function to call when game is over
+    func gameOver() {
+        hud.showHiddenButtons()
+    }
 }
