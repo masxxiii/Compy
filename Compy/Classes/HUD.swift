@@ -16,6 +16,10 @@ class HUD: SKNode {
     
     var totalScore: SKLabelNode = SKLabelNode(text: "000000")
     
+    let restartButton = SKSpriteNode()
+     
+    let menuButton = SKSpriteNode()
+    
     // function for creating HUD nodes
     func createHudNodes(screenSize: CGSize) {
         let cameraOrigin = CGPoint(x: screenSize.width / 2, y: screenSize.height / 2)
@@ -29,6 +33,16 @@ class HUD: SKNode {
         
         totalScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         totalScore.verticalAlignmentMode = SKLabelVerticalAlignmentMode.center
+        
+        restartButton.texture = textureAtlas.textureNamed("restart")
+        menuButton.texture = textureAtlas.textureNamed("menu")
+        // Assign node names to the buttons:
+        restartButton.name = "restartGame"
+        menuButton.name = "returnToMenu"
+        menuButton.position = CGPoint(x: -140, y: 0)
+        // Size the button nodes:
+        restartButton.size = CGSize(width: 140, height: 140)
+        menuButton.size = CGSize(width: 70, height: 70)
         
         self.addChild(batteryIcon)
         self.addChild(totalScore)
@@ -75,5 +89,19 @@ class HUD: SKNode {
                 healthNodes[index].run(fadeAction)
             }
         }
+    }
+    
+    // function to show hidden buttons
+    func showHiddenButtons() {
+        // Set the button alpha to 0:
+        restartButton.alpha = 0
+        menuButton.alpha = 0
+        // Add the button nodes to the HUD:
+        self.addChild(restartButton)
+        self.addChild(menuButton)
+        // Fade in the buttons:
+        let fadeAnimation = SKAction.fadeAlpha(to: 1, duration: 0.4)
+        restartButton.run(fadeAnimation)
+        menuButton.run(fadeAnimation)
     }
 }
