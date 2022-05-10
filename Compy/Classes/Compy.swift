@@ -216,6 +216,9 @@ class Compy: SKSpriteNode, GameSprite {
         self.alpha = 1
         self.removeAllActions()
         self.run(self.deadAnimation)
+        if let gameScene = self.parent as? GameScene {
+            gameScene.gameOver()
+        }
     }
     
     // function for taking damage.
