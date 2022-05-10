@@ -38,4 +38,11 @@ If you are one of us unlucky ones, your Compy will die on your first try. But do
 
 ![screenshot](./Compy/Assets.xcassets/Screenshots/gameover.imageset/gameover.png)
 
+## Notes
 
+Feel free to download the project and build upon it. You can add new features, refactor the code if you'd like and improve the overall experience. Happy coding!
+
+## License
+
+Distributed under the MIT License. See LICENSE for more information.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
