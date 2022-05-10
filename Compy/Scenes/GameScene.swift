@@ -71,6 +71,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hud.createHudNodes(screenSize: self.size)
         // Add the HUD to the camera's node tree:
         self.camera!.addChild(hud)
+        
+        // add particle node to compy
+        if let smokeEmitter = SKEmitterNode(fileNamed: "CompySmoke") {
+            compy.zPosition = 10
+            smokeEmitter.particleZPosition = -1
+            compy.addChild(smokeEmitter)
+            smokeEmitter.targetNode = self
+        }
+        
     }
     
     // method that is fired when contact occurs
