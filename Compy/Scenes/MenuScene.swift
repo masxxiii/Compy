@@ -33,15 +33,15 @@ class MenuScene: SKScene {
         startButton.texture = textureAtlas.textureNamed("start")
         startButton.size = CGSize(width: 50, height: 50)
         startButton.name = "StartButton"
-        startButton.position = CGPoint(x: 0, y: -110)
+        startButton.position = CGPoint(x: 0, y: -30)
         self.addChild(startButton)
         
         // start text
         let startText = SKLabelNode(fontNamed: "AvenirNext-HeavyItalic")
         startText.text = "Click Play To Start The Game."
         startText.verticalAlignmentMode = .center
-        startText.position = CGPoint(x: 0, y: 2)
-        startText.fontSize = 40
+        startText.position = CGPoint(x: 0, y: -100)
+        startText.fontSize = 30
         startText.name = "StartText"
         startText.zPosition = 5
         self.addChild(startText)
@@ -57,7 +57,7 @@ class MenuScene: SKScene {
     
     //UIKit calls this function when a new touch is detected in a view or window
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+
         for touch in (touches) {
             // Find the location of the touch:
             let location = touch.location(in: self)
