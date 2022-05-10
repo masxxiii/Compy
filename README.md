@@ -15,6 +15,8 @@
   <a href="#license">License</a>
 </p>
 
+![screenshot](./Compy/Assets.xcassets/Compy.spriteatlas/AppIcon.appiconset/1024.png)
+
 ## Main Technologies
 
 * This software uses the following main technologies:
