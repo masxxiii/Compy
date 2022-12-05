@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">A 2D adventure game built using <a href="https://developer.apple.com/documentation/spritekit/" target="_blank">SpriteKit</a> framework.</h4>
+<h4 align="center">A 2D adventure game built using <a href="https://developer.apple.com/documentation/spritekit/" target="_blank">SpriteKit</a> framework in swift.</h4>
 
 <p align="center">
   <a href="#main-technologies">Main Technologies</a> •
