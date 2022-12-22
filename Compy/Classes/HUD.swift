@@ -8,6 +8,7 @@
 import SpriteKit
 
 class HUD: SKNode {
+    
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "HUD")
     
     var batteryAtlas: SKTextureAtlas = SKTextureAtlas(named: "Environment")
